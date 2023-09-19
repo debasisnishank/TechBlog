@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><span class="fa fa-medium"></span>NSK</a>
+                        <a class="nav-link" href="profile.jsp"><span class="fa fa-medium"></span>NSK</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -84,11 +84,12 @@
             <div class="row my-4">
                 <div class="col-md-8 offset-md-2">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header primary-background text-white">
                             <h4><%= b.getbTitle()%></h4>
                         </div>
 
                         <div class="card-body">
+                            <img src="blog_pics/<%= b.getbPic()%>" class="card-img-top my-2" alt="...">
                             <p><%=b.getbContent()%></p>
                             <br>
                             <br>
@@ -96,10 +97,10 @@
                             <pre><%= b.getbCode()%></pre>
                         </div>
 
-                        <div class="card-footer text-center primary-background">
+                        <div class="card-footer primary-background">
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span>10</span></a>
 
-                            <a href="show_blog.jsp?blog_id=6" class="btn btn-outline-light btn-sm">Read more...</a>
+
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>20</span></a>
                         </div>
 
