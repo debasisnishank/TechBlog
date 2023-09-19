@@ -78,13 +78,28 @@
             </div>
         </nav>
 
-     <!--main content of body-->
-     
-     
-     
-     
-     
-     <!--end of main content of body-->
+        <!--main content of body-->
+
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4><%= b.getbTitle()%></h4>
+                        </div>
+                        
+                        <div class="card-body">
+                            <p><%=b.getbContent() %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--end of main content of body-->
         <!-- Modal -->
         <div class="modal fade" id="profile-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
