@@ -32,6 +32,28 @@
             .banner-background{
                 clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 95%, 66% 89%, 25% 91%, 0 97%, 0 0);
             }
+            .post-title{
+                font-weight: 100;
+                font-size: 30px;
+            }
+            .post-content{
+                font-weight:100;
+                font-size: 25px;
+            }
+            .post-code{
+                
+            }
+            .post-date{
+                font-style: italic;
+                font-weight: bold;
+            }
+            .post-user-info{
+                font-size: 20px;
+            }
+            .row-user{
+                border: 1px solid #cccccc;
+                padding-top:15px;
+            }
         </style>
     </head>
     <body>
@@ -85,16 +107,25 @@
                 <div class="col-md-8 offset-md-2">
                     <div class="card">
                         <div class="card-header primary-background text-white">
-                            <h4><%= b.getbTitle()%></h4>
+                            <h4 class="post-title"><%= b.getbTitle()%></h4>
                         </div>
 
                         <div class="card-body">
                             <img src="blog_pics/<%= b.getbPic()%>" class="card-img-top my-2" alt="...">
-                            <p><%=b.getbContent()%></p>
+                            <div class="row my-3 row-user">
+                                <div class="col-md-8">
+                                    <p class="post-user-info"><a href="#">nsk</a> has posted</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="post-date"><%= b.getbDate().toLocaleString() %></p>
+                                </div>
+                            </div>
+                            <p class="post-content"><%=b.getbContent()%></p>
                             <br>
                             <br>
-
-                            <pre><%= b.getbCode()%></pre>
+                            <div class="post-code">
+                                <pre><%= b.getbCode()%></pre>
+                            </div>
                         </div>
 
                         <div class="card-footer primary-background">
