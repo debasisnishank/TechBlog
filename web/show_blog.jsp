@@ -87,10 +87,22 @@
                         <div class="card-header">
                             <h4><%= b.getbTitle()%></h4>
                         </div>
-                        
+
                         <div class="card-body">
-                            <p><%=b.getbContent() %></p>
+                            <p><%=b.getbContent()%></p>
+                            <br>
+                            <br>
+
+                            <pre><%= b.getbCode()%></pre>
                         </div>
+
+                        <div class="card-footer text-center primary-background">
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span>10</span></a>
+
+                            <a href="show_blog.jsp?blog_id=6" class="btn btn-outline-light btn-sm">Read more...</a>
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>20</span></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
