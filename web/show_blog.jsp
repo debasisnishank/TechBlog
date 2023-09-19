@@ -1,3 +1,5 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="com.tech.blog.dao.UserDao"%>
 <%@page import="com.tech.blog.entity.Category"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.tech.blog.helper.ConnectionProvider"%>
@@ -41,7 +43,7 @@
                 font-size: 25px;
             }
             .post-code{
-                
+
             }
             .post-date{
                 font-style: italic;
@@ -53,6 +55,11 @@
             .row-user{
                 border: 1px solid #cccccc;
                 padding-top:15px;
+            }
+            body{
+                background: url(image/pexels-pixabay-531880.jpg);
+                background-size: cover;
+                background-attachment: fixed;
             }
         </style>
     </head>
@@ -114,10 +121,11 @@
                             <img src="blog_pics/<%= b.getbPic()%>" class="card-img-top my-2" alt="...">
                             <div class="row my-3 row-user">
                                 <div class="col-md-8">
-                                    <p class="post-user-info"><a href="#">nsk</a> has posted</p>
+                                    <% UserDao userdao = new UserDao(ConnectionProvider.getConnection()); %>
+                                    <p class="post-user-info"><a href="#"><%=userdao.getUserByUserId(b.getUserId()).getName() %></a> has posted</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p class="post-date"><%= b.getbDate().toLocaleString() %></p>
+                                    <p class="post-date"><%= DateFormat.getDateInstance().format(b.getbDate()) %></p>
                                 </div>
                             </div>
                             <p class="post-content"><%=b.getbContent()%></p>
