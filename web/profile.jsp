@@ -30,6 +30,11 @@
             .banner-background{
                 clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 95%, 66% 89%, 25% 91%, 0 97%, 0 0);
             }
+             body{
+                background: url(image/pexels-pixabay-531880.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+            }
         </style>
 
     </head>
