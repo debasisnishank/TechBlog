@@ -82,10 +82,38 @@ public class UserDao {
             ps.setInt(7, u.getId());
             ps.executeUpdate();
             f = true;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-                return f;
+        return f;
+    }
+
+    public User getUserByUserId(int blogid) {
+
+        User user = null;
+        try {
+            String q = "select * from user where id = ?";
+            PreparedStatement ps = this.con.prepareStatement(q);
+            ps.setInt(1, blogid);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                user = new User();
+                //data iss brought from database
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+                user.setGender(rs.getString("gender"));
+                user.setAbout(rs.getString("about"));
+                user.setDateTime(rs.getTimestamp("reg_date"));
+                user.setProfile(rs.getString("profile"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return user;
+
     }
 }
