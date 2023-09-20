@@ -40,7 +40,7 @@
             }
             .post-content{
                 font-weight:100;
-                font-size: 25px;
+                font-size: 20px;
             }
             .post-code{
 
